@@ -1,11 +1,14 @@
 import { RouterProvider } from "react-router-dom";
 import Router from "./routes";
-import { Suspense } from "react";
+import { Suspense, useContext } from "react";
 import React from "react";
+import { ThemeContext } from "./context/theme";
+
 
 const App = () => {
+  const { theme } = useContext(ThemeContext);
   return (
-    <div className={`mx-auto h-screen flex flex-col px-4py-2`}>
+    <div className={`h-screen w-full mx-auto py-2 ${theme === "dark" ? "dark" : ""}`}>
       <Suspense fallback={<>Loading...</>}>
           <RouterProvider router={Router} />
       </Suspense>
