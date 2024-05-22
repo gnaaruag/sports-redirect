@@ -4,6 +4,7 @@ import { Suspense, useContext } from "react";
 import React from "react";
 import { ThemeContext } from "./context/theme";
 import { MatchesProvider } from "./context/matches/context";
+import { ArticlesProvider } from "./context/articles/context";
 
 const App = () => {
   const { theme } = useContext(ThemeContext);
@@ -14,9 +15,11 @@ const App = () => {
       }`}
     >
       <Suspense fallback={<>Loading...</>}>
-        <MatchesProvider>
-          <RouterProvider router={Router} />
-        </MatchesProvider>
+        <ArticlesProvider>
+          <MatchesProvider>
+            <RouterProvider router={Router} />
+          </MatchesProvider>
+        </ArticlesProvider>
       </Suspense>
     </div>
   );

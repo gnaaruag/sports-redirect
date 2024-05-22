@@ -6,6 +6,7 @@ import Signin from "../pages/signin";
 import Signup from "../pages/signup";
 import HomePage from "../pages/HomePage";
 import AccountLayout from "../layout";
+import Modal from "../pages/news/modal";
 
 const router = createBrowserRouter([
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "*",
     element: <Notfound />,
+  },
+  {
+    path: "/articles/:articleID",
+    element: <Modal />,
   },
 
 ]);
