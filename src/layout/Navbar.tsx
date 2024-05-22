@@ -1,14 +1,14 @@
-
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState, useContext, Fragment, useEffect } from "react";
 import { Disclosure, Menu, Transition, Switch } from "@headlessui/react";
 import { UserIcon } from "@heroicons/react/24/solid";
 // import Preferences from "../../pages/preferences";
+import LOGO from "../assets/LOGO.png"
+import "./layout.css"
 import { ThemeContext } from "../context/theme";
 import React from "react";
 const classNames = (...classes: string[]): string =>
   classes.filter(Boolean).join(" ");
-
 const Navbar = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 
@@ -52,7 +52,7 @@ const Navbar = () => {
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                  LOGOIMG
+                  <img src={LOGO} alt="logo" className="img"/>
                 </div>
               </div>
 
