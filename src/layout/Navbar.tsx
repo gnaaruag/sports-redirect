@@ -2,7 +2,6 @@
 import { useState, useContext, Fragment, useEffect } from "react";
 import { Disclosure, Menu, Transition, Switch } from "@headlessui/react";
 import { UserIcon } from "@heroicons/react/24/solid";
-// import Preferences from "../../pages/preferences";
 import LOGO from "../assets/LOGO.png"
 import "./layout.css"
 import { ThemeContext } from "../context/theme";

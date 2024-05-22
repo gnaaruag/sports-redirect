@@ -26,7 +26,6 @@ const SigninForm: React.FC = () => {
         throw new Error("Sign-in failed");
       }
 
-      console.log("Sign-in successful");
 
       // Extract the response body as JSON data
       // eslint-disable-next-line @typescript-eslint/no-unused-vars

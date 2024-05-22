@@ -2,6 +2,7 @@ import React, { createContext, useContext, useReducer } from "react";
 import { ArticlesState } from "./types";
 import { reducer, initialState, ArticleActions } from "./reducer";
 
+//news context
 const ArticlesStateContext = createContext<ArticlesState>(initialState);
 
 const ArticlesDispatchContext = createContext<React.Dispatch<ArticleActions> | undefined>(undefined);

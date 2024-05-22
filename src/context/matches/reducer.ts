@@ -7,8 +7,7 @@ export const initialState: MatchesState = {
   errorMessage: ''
 };
 
-// Then I'll define a new type called `ProjectsActions`
-// for all possible combimations of action objects.
+
 
 export type MatchesActions =
   | { type: 'FETCH_MATCHES_REQUEST' }

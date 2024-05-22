@@ -5,7 +5,6 @@ import MatchCard from './MatchCard.tsx'
 export default function Matches() {
   const state: any = useMatchesState()
   const { matches, isLoading, isError, errorMessage } = state
-  console.log("matches: ",matches);
 
   if (matches.length === 0 && isLoading) {
     return <span>Loading...</span>;

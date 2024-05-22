@@ -1,4 +1,5 @@
-
+// theme context
+// TODO: fix theme display
 import React, { createContext, useState } from "react";
 
 interface ThemeContextProps {

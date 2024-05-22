@@ -5,7 +5,6 @@ import ArticleId from "./NewsItem";
 export default function ArticleList() {
   const state = useArticlesState();
   const { articles, isLoading, isError, errorMessage } = state;
-  console.log("articles in ArticleList.tsx: ", articles);
 
   if (isLoading) {
     return <span>Loading...</span>;
