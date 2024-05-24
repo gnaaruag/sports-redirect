@@ -67,7 +67,7 @@ const Modal = () => {
       <Transition show={isOpen} as={Fragment}>
         <Dialog
           as="div"
-          className="fixed inset-0 z-10 overflow-y-auto"
+          className="fixed inset-0 z-10 overflow-y-auto  "
           onClose={closeModal}
         >
           <div className="min-h-screen flex items-center justify-center">
@@ -92,11 +92,11 @@ const Modal = () => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="w-full max-w-xl transform overflow-hidden rounded-lg bg-white p-6 text-left shadow-xl relative">
-                <div className="flex items-center justify-between mb-4">
+              <div className="w-full max-w-xl transform overflow-hidden rounded-lg bg-white p-6 text-left shadow-xl relative dark:bg-slate-900">
+                <div className="flex items-center justify-between mb-4 ">
                   <Dialog.Title
                     as="h3"
-                    className="text-2xl font-semibold text-gray-600"
+                    className="text-2xl font-semibold text-gray-600 dark:text-white"
                   >
                     {title}
                   </Dialog.Title>
@@ -112,15 +112,15 @@ const Modal = () => {
                 <img
                   src={thumbnail}
                   alt={title}
-                  className="w-full rounded-lg "
+                  className="w-full rounded-lg dark:text-white"
                 />
-                <p className="text-gray-600  text-sm font-medium mt-2">
+                <p className="text-gray-600  text-sm font-medium mt-2 dark:text-white">
                   {date.slice(0,10)}
                 </p>
 
                 <div
                   dangerouslySetInnerHTML={{ __html: content }}
-                  className="mt-2 text-gray-800 text-justify"
+                  className="mt-2 text-gray-800 text-justify dark:text-white"
                 />
               </div>
             </Transition.Child>

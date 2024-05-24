@@ -24,7 +24,7 @@ const Navbar = () => {
   useEffect(() => {
     if (authenticated) {
       setUserNavigation([
-        { name: "Change Password", href: "/changePwd" },
+        { name: "Change Password", href: "/change-password" },
         { name: "Sign out", href: "/logout" },
       ]);
     } else {
