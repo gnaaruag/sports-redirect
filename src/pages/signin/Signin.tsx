@@ -44,7 +44,7 @@ const SigninForm: React.FC = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label className="block text-gray-700 font-semibold mb-2">Email:</label>
+        <label className="block text-gray-700 font-semibold mb-2 dark:text-white">Email:</label>
         <input
           type="email"
           name="email"
@@ -55,7 +55,7 @@ const SigninForm: React.FC = () => {
         />
       </div>
       <div>
-        <label className="block text-gray-700 font-semibold mb-2">
+        <label className="block text-gray-700 font-semibold mb-2 dark:text-white">
           Password:
         </label>
         <input

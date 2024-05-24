@@ -46,7 +46,7 @@ export default function MatchCard(props : Props, State : Match) {
 
   return (
     <>
-      {match.isRunning && <div className='border-2 mx-2 mb-1 rounded border-black p-2 bg-gray-300'>
+      {match.isRunning && <div className='border-2 mx-2 mb-1 rounded border-black p-2 bg-gray-300 dark:bg-slate-900'>
          <div className=' flex justify-between w-48'>
            <h3 className='font-bold text-black-800'>{match.sportName}</h3>
            <ArrowPathIcon
@@ -55,7 +55,7 @@ export default function MatchCard(props : Props, State : Match) {
               onClick={handleIconClick}
             />
          </div>
-         <p className='text-sm text-gray-600'>{match.location}</p>
+         <p className='text-sm text-gray-600 dark:text-blue-500'>{match.location}</p>
          <div className='flex flex-col my-2'>
            <div className='flex justify-between mt-1'>
              <p className='font-semibold'>{match.teams[0].name}</p>

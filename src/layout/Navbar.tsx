@@ -1,22 +1,25 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState, useContext, Fragment, useEffect } from "react";
-import { Disclosure, Menu, Transition, Switch } from "@headlessui/react";
-import { UserIcon } from "@heroicons/react/24/solid";
-import LOGO from "../assets/LOGO.png"
-import "./layout.css"
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { UserIcon, SunIcon, MoonIcon } from "@heroicons/react/24/solid";
+import LOGO from "../assets/LOGO.png";
+import "./layout.css";
 import { ThemeContext } from "../context/theme";
 import React from "react";
+
 const classNames = (...classes: string[]): string =>
   classes.filter(Boolean).join(" ");
+
 const Navbar = () => {
   const { theme, setTheme } = useContext(ThemeContext);
-
   const [enabled, setEnabled] = useState(theme === "dark");
+
   const [userNavigation, setUserNavigation] = useState([
     { name: "Sign in", href: "/signin" },
     { name: "Sign up", href: "/signup" },
   ]);
-  const authenticated = !!localStorage.getItem("authToken");
+
+  const [authenticated, setAuthenticated] = useState(!!localStorage.getItem("authToken"));
 
   useEffect(() => {
     if (authenticated) {
@@ -32,16 +35,28 @@ const Navbar = () => {
     }
   }, [authenticated]);
 
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+    setEnabled(savedTheme === "dark");
+  }, [setTheme]);
+
   const toggleTheme = () => {
-    let newTheme = "";
-    if (theme === "light") {
-      newTheme = "dark";
-    } else {
-      newTheme = "light";
-    }
-    setEnabled(!enabled);
+    const oldTheme = localStorage.getItem("theme");
+    const newTheme = oldTheme === "light" ? "dark" : "light";
     setTheme(newTheme);
+    setEnabled(!enabled);
+    localStorage.setItem("theme", newTheme);
+    document.body.classList.toggle("dark", newTheme === "dark");
   };
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setAuthenticated(!!localStorage.getItem("authToken"));
+    };
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, []);
 
   return (
     <>
@@ -51,26 +66,22 @@ const Navbar = () => {
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                  <img src={LOGO} alt="logo" className="img"/>
+                  <img src={LOGO} alt="logo" className="img" />
                 </div>
               </div>
 
               <div className="hidden md:block">
                 <div className="ml-4 flex items-center md:ml-6">
-                  <Switch
-                    checked={enabled}
-                    onChange={toggleTheme}
-                    className={`${enabled ? "bg-slate-400" : "bg-slate-700"}
-          relative inline-flex h-[24px] w-[60px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+                  <button
+                    onClick={toggleTheme}
+                    className="p-2 rounded-full bg-white text-gray-400 hover:text-blue-600 focus:outline-none"
                   >
-                    <span
-                      aria-hidden="true"
-                      className={`${enabled ? "translate-x-9" : "translate-x-0"}
-                pointer-events-none inline-block h-[16px] w-[16px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
-                    />
-                  </Switch>
-
-                  {authenticated }
+                    {enabled ? (
+                      <MoonIcon className="h-6 w-6" aria-hidden="true" />
+                    ) : (
+                      <SunIcon className="h-6 w-6" aria-hidden="true" />
+                    )}
+                  </button>
 
                   <Menu as="div" className="relative ml-3">
                     <div>

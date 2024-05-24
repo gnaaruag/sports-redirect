@@ -8,7 +8,8 @@ import { ArticlesProvider } from "./context/articles/context";
 import  { Toaster } from 'react-hot-toast';
 
 const App = () => {
-  const { theme } = useContext(ThemeContext);
+  const theme = localStorage.getItem("theme")
+  console.log('theme',theme)
   return (
     <div
       className={`h-screen w-full mx-auto py-2 ${

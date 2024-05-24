@@ -13,7 +13,7 @@ export default function LiveMatch() {
 
   return (
     <div>
-      <h1 className='text-gray-900 font-bold text-xl'>Live Games</h1>
+      <h1 className='text-gray-900 font-bold text-xl dark:text-white'>Live Games</h1>
       <div className='mt-2 justify-start flex items-center w-full'>
         <MatchCardList />
       </div>

@@ -38,7 +38,7 @@ export default function ArticleId(props: Props) {
   }
 
   return (
-    <div className="flex justify-start items-center gap-2 border-2 border-black p-2 bg-gray-300">
+    <div className="flex justify-start items-center gap-2 border-2 border-black p-2 bg-gray-300 dark:bg-slate-900">
       <div className="flex justify-center items-center p-2 rounded-md ">
         <img
           src={articlee.thumbnail}
@@ -48,10 +48,10 @@ export default function ArticleId(props: Props) {
       </div>
       <div>
         <p>{articlee.sport.name}</p>
-        <h1 className="text-gray-900 font-semibold text-xl">{articlee.title}</h1>
+        <h1 className="text-gray-900 font-semibold text-xl dark:text-blue-500">{articlee.title}</h1>
         <p>{articlee.summary}</p>
         <p>{articlee.date.slice(0,10)}</p>
-        <a href={`/articles/${articlee.id}`} className="underline hover:text-gray-600">Read more...</a>
+        <a href={`/articles/${articlee.id}`} className="underline hover:text-gray-600 dark:text-blue-500">Read more...</a>
       </div>
     </div>
   );
