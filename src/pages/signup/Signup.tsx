@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { API_ENDPOINT } from "../../config/constants";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const SignupForm: React.FC = () => {
   const [organisationName, setOrganisationName] = useState("");
@@ -35,6 +36,7 @@ const SignupForm: React.FC = () => {
       localStorage.setItem("userData", JSON.stringify(data.user));
       navigate("/account")
     } catch (error) {
+      toast.error("Something went wrong... Try again later.")
       console.error("Sign-up failed:", error);
     }
   };

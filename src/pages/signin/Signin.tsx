@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { API_ENDPOINT } from "../../config/constants";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const SigninForm: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -26,18 +27,16 @@ const SigninForm: React.FC = () => {
         throw new Error("Sign-in failed");
       }
 
-
       // Extract the response body as JSON data
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const data = await response.json();
 
-      
-
       // After successful signin, first we will save the token in localStorage
       localStorage.setItem("authToken", data.token);
       localStorage.setItem("userData", JSON.stringify(data.user));
-      navigate("/account")
+      navigate("/account");
     } catch (error) {
+      toast.error("Invalid Email or Password");
       console.error("Sign-in failed:", error);
     }
   };
