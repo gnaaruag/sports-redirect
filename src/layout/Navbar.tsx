@@ -48,6 +48,7 @@ const Navbar = () => {
     setEnabled(!enabled);
     localStorage.setItem("theme", newTheme);
     document.body.classList.toggle("dark", newTheme === "dark");
+    window.location.reload()
   };
 
   useEffect(() => {

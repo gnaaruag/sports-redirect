@@ -17,6 +17,7 @@
     "react-hook-form": "^7.51.4",
     "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.23.1",
+    "react-spinners": "^0.13.8",
     "use-local-storage": "^3.0.0"
   },
   "devDependencies": {

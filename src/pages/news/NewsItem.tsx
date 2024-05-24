@@ -3,13 +3,14 @@ import { API_ENDPOINT } from "../../config/constants";
 import { Article } from "../../context/articles/types";
 import React from "react";
 import "./news.css";
+import { SyncLoader } from "react-spinners";
 
 interface Props {
   id: number;
 }
 
 export default function ArticleId(props: Props) {
-  const [articlee, setArticle] = useState<Article | null>(null);
+  const [article, setArticle] = useState<Article | null>(null);
 
   const fetchArticle = async (id: number) => {
     try {
@@ -33,25 +34,25 @@ export default function ArticleId(props: Props) {
     fetchArticle(props.id);
   }, [props.id]);
 
-  if (!articlee) {
-    return <div>Loading...</div>;
+  if (!article) {
+    return <div className='flex justify-center items-center'><SyncLoader color="#3b82f6" size={10}/></div>
   }
 
   return (
     <div className="flex justify-start items-center gap-2 border-2 border-black p-2 bg-gray-300 dark:bg-slate-900">
       <div className="flex justify-center items-center p-2 rounded-md ">
         <img
-          src={articlee.thumbnail}
-          alt={articlee.title}
+          src={article.thumbnail}
+          alt={article.title}
           className="h-24 w-24 object-cover thumbnail"
         />
       </div>
       <div>
-        <p>{articlee.sport.name}</p>
-        <h1 className="text-gray-900 font-semibold text-xl dark:text-blue-500">{articlee.title}</h1>
-        <p>{articlee.summary}</p>
-        <p>{articlee.date.slice(0,10)}</p>
-        <a href={`/articles/${articlee.id}`} className="underline hover:text-gray-600 dark:text-blue-500">Read more...</a>
+        <p>{article.sport.name}</p>
+        <h1 className="text-gray-900 font-semibold text-xl dark:text-blue-500">{article.title}</h1>
+        <p>{article.summary}</p>
+        <p>{article.date.slice(0,10)}</p>
+        <a href={`/articles/${article.id}`} className="underline hover:text-gray-600 dark:text-blue-500">Read more...</a>
       </div>
     </div>
   );
