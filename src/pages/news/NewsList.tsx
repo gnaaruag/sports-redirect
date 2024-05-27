@@ -1,6 +1,7 @@
 import React from "react";
 import { useArticlesState } from "../../context/articles/context";
 import ArticleId from "./NewsItem";
+import "./list.css"
 
 export default function ArticleList() {
   const state = useArticlesState();
@@ -15,7 +16,7 @@ export default function ArticleList() {
   }
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 overflow-y-scroll list">
       {articles.map((article: any) => {
         return <ArticleId key={article.id} id={article.id} />;
       })}

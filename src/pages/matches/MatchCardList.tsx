@@ -17,12 +17,11 @@ export default function Matches() {
   }
 
   return (
-    <>
-      {matches.map((match : any) =>{
+<div className='overflow-x-scroll flex'>
+{matches.map((match : any) =>{
         return(
           <MatchCard key={match.id} id={match.id} />
         )
       })}
-    </>
-  )
+</div>  )
 }

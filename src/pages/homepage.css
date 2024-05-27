@@ -1,0 +1,6 @@
+@media only screen and (max-width: 600px) {
+
+.content-class {
+	flex-direction: column-reverse;
+}
+}

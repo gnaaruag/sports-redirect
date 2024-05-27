@@ -1,0 +1,9 @@
+.list {
+	height: 30em;
+}
+
+@media only screen and (max-width: 600px) {
+	.list {
+		min-width: 100vw;
+	}
+}
