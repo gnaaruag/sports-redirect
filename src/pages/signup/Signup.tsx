@@ -34,7 +34,7 @@ const SignupForm: React.FC = () => {
       localStorage.setItem("authToken", data.token);
       // if successful, save the user info in localStorage
       localStorage.setItem("userData", JSON.stringify(data.user));
-      navigate("/account")
+      navigate("/")
     } catch (error) {
       toast.error("Something went wrong... Try again later.")
       console.error("Sign-up failed:", error);

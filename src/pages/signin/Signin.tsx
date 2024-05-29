@@ -34,7 +34,7 @@ const SigninForm: React.FC = () => {
       // After successful signin, first we will save the token in localStorage
       localStorage.setItem("authToken", data.token);
       localStorage.setItem("userData", JSON.stringify(data.user));
-      navigate("/account");
+      navigate("/");
     } catch (error) {
       toast.error("Invalid Email or Password");
       console.error("Sign-in failed:", error);

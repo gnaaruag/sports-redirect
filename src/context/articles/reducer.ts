@@ -1,12 +1,6 @@
 import { Reducer } from "react";
 import { Article, ArticlesState } from "./types";
-
-export const initialState: ArticlesState = {
-  articles: [],
-  isLoading: false,
-  isError: false,
-  errorMessage: "",
-};
+import { initialState } from "./initialData";
 export type ArticleActions =
     | { type: "FETCH_ARTICLES_REQUEST" }
     | { type: "FETCH_ARTICLES_SUCCESS"; payload: Article[] }

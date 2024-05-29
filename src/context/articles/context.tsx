@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useReducer } from "react";
 import { ArticlesState } from "./types";
-import { reducer, initialState, ArticleActions } from "./reducer";
-
+import { reducer, ArticleActions } from "./reducer";
+import { initialState } from "./initialData";
 //news context
 const ArticlesStateContext = createContext<ArticlesState>(initialState);
 

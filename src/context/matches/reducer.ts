@@ -1,12 +1,5 @@
 import { Match, MatchesState } from './types';
-
-export const initialState: MatchesState = {
-  matches: [],
-  isLoading: false,
-  isError: false,
-  errorMessage: ''
-};
-
+import { initialState } from './initialData';
 
 
 export type MatchesActions =

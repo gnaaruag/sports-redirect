@@ -1,6 +1,7 @@
 import { createContext, useContext, useReducer } from "react";
 import { MatchesState, MatchesActions } from "./types";
-import { reducer, initialState } from "./reducer";
+import { reducer } from "./reducer";
+import { initialState } from "./initialData";
 import React from "react";
 
 // match context
