@@ -7,7 +7,7 @@ import Signup from "../pages/signup";
 import HomePage from "../pages/HomePage";
 import AccountLayout from "../layout";
 import Modal from "../pages/news/modal";
-import Logout from "../pages/Logout.tsx";
+import Logout from "../pages/logout";
 const router = createBrowserRouter([
 
 
