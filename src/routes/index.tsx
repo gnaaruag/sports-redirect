@@ -7,7 +7,7 @@ import Signup from "../pages/signup";
 import HomePage from "../pages/HomePage";
 import AccountLayout from "../layout";
 import Modal from "../pages/news/modal";
-
+import Logout from "../pages/Logout.tsx";
 const router = createBrowserRouter([
 
 
@@ -28,6 +28,10 @@ const router = createBrowserRouter([
 	{
     path: "/signin",
     element: <Signin />,
+  },
+  {
+    path: "/logout",
+    element: <Logout />,
   },
   {
     path: "/signup",
