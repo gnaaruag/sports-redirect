@@ -14,7 +14,7 @@ export default function Articles() {
   return (
     <div className="">
       <h1 className="text-gray-900 font-bold text-xl dark:text-white">Latest News</h1>
-      <div className="mt-2 justify-between flex items-center w-full">
+      <div className="mt-2 justify-between flex items-center w-full p-2">
         <ArticleList />
       </div>
     </div>

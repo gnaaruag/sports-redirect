@@ -2,7 +2,14 @@
 import { useState, useContext, Fragment, useEffect } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { UserIcon, SunIcon, MoonIcon } from "@heroicons/react/24/solid";
+import { fetchTeams } from "../context/teams/actions";
+import { fetchSports } from "../context/sports/actions";
+import { useSportDispatch } from "../context/sports/context";
+import { useTeamsDispatch } from "../context/teams/context";
 import LOGO from "../assets/LOGO.png";
+import PreferencesComponent from "../pages/preferences/PreferencesComponent";
+
+
 import "./layout.css";
 import { ThemeContext } from "../context/theme";
 import React from "react";
@@ -13,7 +20,8 @@ const classNames = (...classes: string[]): string =>
 const Navbar = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   const [enabled, setEnabled] = useState(theme === "dark");
-
+  const sportDispatch = useSportDispatch();
+  const teamDispatch = useTeamsDispatch();
   const [userNavigation, setUserNavigation] = useState([
     { name: "Sign in", href: "/signin" },
     { name: "Sign up", href: "/signup" },
@@ -72,7 +80,8 @@ const Navbar = () => {
               </div>
 
               <div className="hidden md:block">
-                <div className="ml-4 flex items-center md:ml-6">
+                <div className="ml-4 flex items-center md:ml-6 gap-2">
+                {authenticated && <PreferencesComponent />}
                   <button
                     onClick={toggleTheme}
                     className="p-2 rounded-full bg-white text-gray-400 hover:text-blue-600 focus:outline-none"
@@ -87,7 +96,7 @@ const Navbar = () => {
                   <Menu as="div" className="relative ml-3">
                     <div>
                       <Menu.Button className="rounded-full bg-white p-1 text-gray-400 hover:text-blue-600">
-                        <UserIcon className="h-6 w-6" aria-hidden="true" />
+                        <UserIcon className="h-8 w-8" aria-hidden="true" />
                       </Menu.Button>
                     </div>
                     <Transition

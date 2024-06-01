@@ -14,8 +14,8 @@ export interface SportState {
 
 export type SportsActions =
 	| { type: "FETCH_SPORTS_REQUEST" }
-	| { type: "FETCH_SPORT_SUCCESS"; payload: Sport[] }
-	| { type: "FETCH_SPORT_FAILURE"; payload: string }
+	| { type: "FETCH_SPORTS_SUCCESS"; payload: Sport[] }
+	| { type: "FETCH_SPORTS_FAILURE"; payload: string }
 
 export const reducer = (state: SportState = initialState, action: SportsActions): SportState => {
 	switch (action.type) {
@@ -24,13 +24,13 @@ export const reducer = (state: SportState = initialState, action: SportsActions)
 				...state,
 				isLoading: true,
 			};
-		case "FETCH_SPORT_SUCCESS":
+		case "FETCH_SPORTS_SUCCESS":
 			return {
 				...state,
 				isLoading: false,
 				sports: action.payload,
 			};
-		case "FETCH_SPORT_FAILURE":
+		case "FETCH_SPORTS_FAILURE":
 			return {
 				...state,
 				isLoading: false,

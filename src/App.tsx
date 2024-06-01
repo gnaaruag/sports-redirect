@@ -5,24 +5,33 @@ import React from "react";
 import { ThemeContext } from "./context/theme";
 import { MatchesProvider } from "./context/matches/context";
 import { ArticlesProvider } from "./context/articles/context";
-import  { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
+import { PreferencesProvider } from "./context/preferences/context";
+import { SportProvider } from "./context/sports/context";
+import { TeamsProvider } from "./context/teams/context";
 
 const App = () => {
-  const theme = localStorage.getItem("theme")
-  console.log('theme',theme)
+  const theme = localStorage.getItem("theme");
+  console.log("theme", theme);
   return (
     <div
       className={`h-screen w-full mx-auto py-2 ${
         theme === "dark" ? "dark" : ""
       }`}
     >
-      <Toaster/>
+      <Toaster />
       <Suspense fallback={<>Loading...</>}>
-        <ArticlesProvider>
-          <MatchesProvider>
-            <RouterProvider router={Router} />
-          </MatchesProvider>
-        </ArticlesProvider>
+        <PreferencesProvider>
+          <SportProvider>
+            <TeamsProvider>
+              <ArticlesProvider>
+                <MatchesProvider>
+                  <RouterProvider router={Router} />
+                </MatchesProvider>
+              </ArticlesProvider>
+            </TeamsProvider>
+          </SportProvider>
+        </PreferencesProvider>
       </Suspense>
     </div>
   );

@@ -30,9 +30,9 @@ const SigninForm: React.FC = () => {
       // Extract the response body as JSON data
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const data = await response.json();
-
+      console.log(data)
       // After successful signin, first we will save the token in localStorage
-      localStorage.setItem("authToken", data.token);
+      localStorage.setItem("authToken", data.auth_token);
       localStorage.setItem("userData", JSON.stringify(data.user));
       navigate("/");
     } catch (error) {
