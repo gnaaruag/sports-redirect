@@ -69,7 +69,7 @@ const PreferencesComponent = () => {
               }
           }),
       });
-
+      console.log(response)
       if (!response.ok) {
           throw new Error('Failed to update preferences');
       }
@@ -86,7 +86,7 @@ const PreferencesComponent = () => {
           })
       );
       closeModal();
-
+      window.location.reload()
 
   } catch (error) {
       console.error(error);
