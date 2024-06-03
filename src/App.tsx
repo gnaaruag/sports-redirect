@@ -15,7 +15,7 @@ const App = () => {
   console.log("theme", theme);
   return (
     <div
-      className={`h-screen w-full mx-auto py-2 ${
+      className={` w-full mx-auto py-2 ${
         theme === "dark" ? "dark" : ""
       }`}
     >

@@ -92,7 +92,7 @@ const Modal = () => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="w-full max-w-xl transform overflow-hidden rounded-lg bg-white p-6 text-left shadow-xl relative dark:bg-slate-900">
+              <div className="w-screen max-w-6xl transform overflow-hidden rounded-lg bg-white p-6 text-left shadow-xl relative dark:bg-slate-900">
                 <div className="flex items-center justify-between mb-4 ">
                   <Dialog.Title
                     as="h3"
