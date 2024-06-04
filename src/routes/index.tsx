@@ -8,6 +8,7 @@ import HomePage from "../pages/HomePage";
 import AccountLayout from "../layout";
 import Modal from "../pages/news/modal";
 import Logout from "../pages/logout";
+import ChangePassword from "../pages/change-password";
 const router = createBrowserRouter([
 
 
@@ -38,12 +39,16 @@ const router = createBrowserRouter([
     element: <Signup />,
   },
   {
-    path: "*",
-    element: <Notfound />,
+    path: "/change-password",
+    element: <ChangePassword />,
   },
   {
     path: "/articles/:articleID",
     element: <Modal />,
+  },
+  {
+    path: "*",
+    element: <Notfound />,
   },
 
 ]);
