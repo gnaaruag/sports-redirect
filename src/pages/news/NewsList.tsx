@@ -22,14 +22,13 @@ type UserData = {
 export default function ArticleList() {
   const state = useArticlesState();
   const { articles, isLoading, isError, errorMessage } = state;
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [selectedCategory, setSelectedCategory] = useState<string>("Your News");
   const [sortOption, setSortOption] = useState<string>("date");
   const [userData, setUserData] = useState<UserData | null>(null);
 
   const categories = [
     "All",
     "Your News",
-    "Preferred Teams and Sports",
     "Basketball",
     "American Football",
     "Rugby",
@@ -88,7 +87,7 @@ export default function ArticleList() {
   }
 
   return (
-    <div className="p-4">
+    <div className="p-4 articles">
       <div className="flex gap-4 my-4 items-center ">
         <div className=" flex gap-2">
         {categories.map(category => (

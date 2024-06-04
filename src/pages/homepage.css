@@ -1,6 +1,28 @@
-@media only screen and (max-width: 600px) {
-
+/* General styling for the content class */
 .content-class {
-	flex-direction: column-reverse;
-}
-}
+	display: flex;
+	justify-content: space-between;
+  }
+  
+  /* Specific widths for Articles and Sidebar */
+  .articles {
+	flex: 0 0 70%;
+	min-width: 55em;
+  }
+  
+  .sidebar {
+	flex: 0 0 30%;
+	min-width: 15em;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media only screen and (max-width: 600px) {
+	.content-class {
+	  flex-direction: column-reverse;
+	}
+	
+	.articles, .sidebar {
+	  flex: 1 0 auto;
+	}
+  }
+  
