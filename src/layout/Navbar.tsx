@@ -77,9 +77,11 @@ const Navbar = () => {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 flex ">
                   <img src={LOGO} alt="logo" className="img" />
+                  
                 </div>
+                <p className="font-bold text-2xl">Sports Redirect</p>
               </div>
 
               <div className="hidden md:block">
