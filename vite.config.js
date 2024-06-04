@@ -16,41 +16,37 @@ export default defineConfig({
       manifest: {
         name: "Sports Redirect",
         short_name: "Sports Redirect",
-        icons: [
-          {
-            "src": "/favicon.ico",
-            "sizes": "64x64 32x32 24x24 16x16",
-            "type": "image/x-icon"
-          },
+        "icons": [
           {
             "src": "/128.png",
             "type": "image/png",
-            "sizes": "16x16"
+            "sizes": "128x128"
           },
           {
             "src": "/144.png",
             "type": "image/png",
-            "sizes": "16x16"
+            "sizes": "144x144"
           },
           {
             "src": "/256.png",
             "type": "image/png",
-            "sizes": "16x16"
+            "sizes": "256x256"
           },
           {
             "src": "/512.png",
             "type": "image/png",
-            "sizes": "16x16"
+            "sizes": "512x512",
+			"purpose": "any maskable"
           },
           {
             "src": "/1024.png",
             "type": "image/png",
-            "sizes": "16x16"
+            "sizes": "1024x1024"
           },
           {
             "src": "/android-launchericon-192-192.png",
             "type": "image/png",
-            "sizes": "32x32"
+            "sizes": "192x192"
           },
           {
             "src": "/android-launchericon-512-512.png",
@@ -62,6 +58,7 @@ export default defineConfig({
  
         ],
         theme_color: '#AAF',
+		start_url: "/",
       },
     }),
   ],
