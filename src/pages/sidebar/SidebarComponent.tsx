@@ -117,7 +117,7 @@ const SidebarComponent: React.FC = () => {
     : sports;
 
   const filterTeams = userPreferences?.selectedTeams.length
-    ? filteredTeams.filter(team => userPreferences.selectedTeams.includes(team.id))
+    ? filteredTeams.filter(team => team)
     : filteredTeams;
 
   if (isLoading) {
