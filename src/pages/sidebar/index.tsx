@@ -1,12 +1,24 @@
-import React from 'react'
-import SidebarComponent from "./SidebarComponent"
+import ErrorBoundary from "../../components/ErrorBoundary.tsx";
+import { SyncLoader } from "react-spinners";
+import React, { Suspense } from "react";
+import SidebarComponent from "./SidebarComponent";
 
 function Sidebar() {
   return (
-	<div>
-	  <SidebarComponent/>
-	</div>
-  )
+    <div>
+      <ErrorBoundary>
+        <Suspense
+          fallback={
+            <div className="suspense-loading">
+              <SyncLoader color="#3b82f6" size={10} />
+            </div>
+          }
+        >
+          <SidebarComponent />
+        </Suspense>
+      </ErrorBoundary>
+    </div>
+  );
 }
 
-export default Sidebar
+export default Sidebar;

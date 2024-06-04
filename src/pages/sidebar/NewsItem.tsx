@@ -42,7 +42,6 @@ export default function ArticleId(props: Props) {
       <div className="flex justify-center items-center p-2 rounded-md ">
       </div>
       <div>
-        <p>{article.sport.name}</p>
         <h1 className="text-gray-900 font-semibold text-xl dark:text-blue-500">{article.title}</h1>
         <p>{article.summary}</p>
         <p>{article.date.slice(0,10)}</p>

@@ -15,9 +15,9 @@ const App = () => {
   console.log("theme", theme);
   return (
     <div
-      className={` w-full mx-auto py-2 ${
-        theme === "dark" ? "dark" : ""
-      }`}
+      // className={` w-full mx-auto py-2 ${
+      //   theme === "dark" ? "dark" : ""
+      // }`}
     >
       <Toaster />
       <Suspense fallback={<>Loading...</>}>

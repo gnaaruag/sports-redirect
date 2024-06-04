@@ -18,7 +18,8 @@
     "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.23.1",
     "react-spinners": "^0.13.8",
-    "use-local-storage": "^3.0.0"
+    "use-local-storage": "^3.0.0",
+    "vite-plugin-pwa": "^0.20.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

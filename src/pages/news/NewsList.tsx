@@ -22,7 +22,7 @@ type UserData = {
 export default function ArticleList() {
   const state = useArticlesState();
   const { articles, isLoading, isError, errorMessage } = state;
-  const [selectedCategory, setSelectedCategory] = useState<string>("Your News");
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [sortOption, setSortOption] = useState<string>("date");
   const [userData, setUserData] = useState<UserData | null>(null);
 
@@ -89,16 +89,18 @@ export default function ArticleList() {
   return (
     <div className="p-4 articles">
       <div className="flex gap-4 my-4 items-center ">
-        <div className=" flex gap-2">
-        {categories.map(category => (
-          <button 
-            key={category} 
-            onClick={() => handleCategoryChange(category)}
-            className={`p-2 rounded-md ${category === selectedCategory ? "bg-blue-500 text-white" : "bg-gray-300 dark:bg-gray-800 hover:bg-gray-400 dark:hover:bg-gray-700"}`}
-          >
-            {category}
-          </button>
-        ))}
+      <div className=" ">
+          {categories.map(category => (
+            <button
+              key={category}
+              onClick={() => handleCategoryChange(category)}
+              className={`p-1 mr-2 rounded-md ${
+                category === selectedCategory ? "bg-blue-500 text-white" : "bg-gray-300 dark:bg-gray-800 hover:bg-gray-400 dark:hover:bg-gray-700"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
         </div>
         <div className="ml-auto flex items-center gap-2">
           <label htmlFor="sort-articles" className="font-bold">Sort By:</label>

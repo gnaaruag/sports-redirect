@@ -138,7 +138,7 @@ const SidebarComponent: React.FC = () => {
             className="p-2 w-full rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-gray-700"
             onChange={handleSportChange}
           >
-            <option value="">--Select Sport--</option>
+            <option value="">Select Sport</option>
             {filterSports.map(sport => (
               <option key={sport} value={sport}>{sport}</option>
             ))}
@@ -151,7 +151,7 @@ const SidebarComponent: React.FC = () => {
             className="p-2 w-full rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-gray-700"
             onChange={handleTeamChange}
           >
-            <option value="">--Select Team--</option>
+            <option value="">Select Team</option>
             {filterTeams.map(team => (
               <option key={team.id} value={team.id}>{team.name}</option>
             ))}

@@ -1,18 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-    <style>
-      body {
-        width: 100vw;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + React</title>
+  <style>
+    body {
+      width: 100vw;
+      background-color: #fff; /* Default to white background */
+      transition: background-color 0.3s ease; /* Add smooth transition */
+    }
+
+    .dark-mode {
+      background-color: #000; /* Set black background for dark mode */
+    }
+  </style>
+  
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx" defer></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+    const isDarkTheme = localStorage.getItem('theme') === 'dark';
+    document.body.classList.remove('dark'); // Remove dark-mode class by default
+    if (isDarkTheme) {
+      document.body.classList.add('dark'); // Add dark-mode class only if theme is dark
+    }
+  });
+  </script>
+</body>
 </html>
