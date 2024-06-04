@@ -56,25 +56,12 @@ export default defineConfig({
             "type": "image/png",
             "sizes": "32x32"
           },
-          {
-            "src": "/SplashScreen.scale-100.png",
-            "type": "image/png",
-            "sizes": "192x192"
-          },
-          {
-            "src": "/SplashScreen.scale-200.png",
-            "type": "image/png",
-            "sizes": "192x192"
-          },
-          {
-            "src": "/SplashScreen.scale-400.png",
-            "type": "image/png",
-            "sizes": "192x192"
-          },
+
+
+ 
         ],
         theme_color: '#AAF',
       },
     }),
   ],
-  mode: 'production'
 })
