@@ -21,8 +21,8 @@ const PreferencesComponent = () => {
   const authToken: string|null = localStorage.getItem("authToken");
   const userDataString: string|null = localStorage.getItem("userData");
   const userData = userDataString ? JSON.parse(userDataString) : null;
-  const initialSelectedSports = userData?.preferences.selectedSports || [];
-  const initialSelectedTeams = userData?.preferences.selectedTeams || [];
+  const initialSelectedSports = userData?.preferences?.selectedSports || [];
+  const initialSelectedTeams = userData?.preferences?.selectedTeams || [];
   const [isOpen, setIsOpen] = useState(false);
   const [error] = useState(null);
   const dispatchPreferences = usePreferencesDispatch();
