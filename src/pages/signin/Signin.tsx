@@ -27,11 +27,21 @@ const SigninForm: React.FC = () => {
         throw new Error("Sign-in failed");
       }
 
-      // Extract the response body as JSON data
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const data = await response.json();
-      console.log(data)
-      // After successful signin, first we will save the token in localStorage
+      console.log('ppp',data)
+      if (!data.user.preferences) {
+        data.user.preferences = {
+          selectedTeams: [],
+          selectedSports: [],
+        };
+      }
+      else if (Object.keys(data.user.preferences).length === 0) {
+        data.user.preferences = {
+          selectedTeams: [],
+          selectedSports: [],
+        };
+      }
       localStorage.setItem("authToken", data.auth_token);
       localStorage.setItem("userData", JSON.stringify(data.user));
       navigate("/");

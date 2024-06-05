@@ -30,6 +30,12 @@ const SignupForm: React.FC = () => {
       }
       // Dialogue: After successful signup we have to redirect the user to the secured page. We will do that later.
       const data = await response.json();
+      if (!data.user.preferences) {
+        data.user.preferences = {
+          selectedTeams: [],
+          selectedSports: [],
+        };
+      }
 
       localStorage.setItem("authToken", data.token);
       // if successful, save the user info in localStorage

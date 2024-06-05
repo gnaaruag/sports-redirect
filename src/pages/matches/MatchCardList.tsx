@@ -18,13 +18,13 @@ export default function Matches() {
     const userData = localStorage.getItem('userData');
     if (!userData) return matchData;
 
-    const { preferences } = JSON.parse(userData);
-    if (preferences.selectedSports.length === 0 || preferences.selectedTeams.length === 0) return matchData;
+    const preferences = userData ? JSON.parse(userData)?.preferences || {} : {};
+    if (preferences?.selectedSports?.length === 0 || preferences?.selectedTeams?.length === 0) return matchData;
 
     const { selectedSports, selectedTeams } = preferences;
 
     return matchData.filter((match: Match) => {
-      const sportMatch = selectedSports.includes(match.sportName);
+      const sportMatch = selectedSports?.includes(match.sportName) || [];
       const teamMatch = match.teams.some(team => selectedTeams.includes(team.name));
       return sportMatch || teamMatch;
     });
