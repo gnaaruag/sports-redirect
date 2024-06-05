@@ -14,6 +14,7 @@ function Sidebar() {
             </div>
           }
         >
+          <h1 className="font-bold text-xl">Favourites</h1>
           <SidebarComponent />
         </Suspense>
       </ErrorBoundary>
