@@ -4,6 +4,7 @@ import { Article } from "../../context/articles/types";
 import React from "react";
 import "./news.css";
 import { SyncLoader } from "react-spinners";
+import { Link } from "react-router-dom";
 
 interface Props {
   id: number;
@@ -52,7 +53,7 @@ export default function ArticleId(props: Props) {
         <h1 className="text-gray-900 font-semibold text-xl dark:text-blue-500">{article.title}</h1>
         <p>{article.summary}</p>
         <p>{article.date.slice(0,10)}</p>
-        <a href={`/articles/${article.id}`} className="underline hover:text-gray-600 dark:text-blue-500">Read more...</a>
+        <Link to={`articles/${article.id}`} className="underline hover:text-gray-600 dark:text-blue-500">Read more...</Link>
       </div>
     </div>
   );
