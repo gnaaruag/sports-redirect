@@ -4,11 +4,10 @@ import { createBrowserRouter } from "react-router-dom";
 import Notfound from "../pages/Notfound";
 import Signin from "../pages/signin";
 import Signup from "../pages/signup";
-import HomePage from "../pages/HomePage";
 import AccountLayout from "../layout";
-import Modal from "../pages/news/modal";
 import Logout from "../pages/logout";
 import ChangePassword from "../pages/change-password";
+import Modal from "../pages/news/modal";
 const router = createBrowserRouter([
 
 
@@ -17,15 +16,11 @@ const router = createBrowserRouter([
     element: <AccountLayout />,
     children: [
       {
-        path: "",
-        element: <HomePage />,
+        path: "articles/:articleID",
+        element: <Modal />,
       },
     ],
   },
-	{
-		path: "/",
-		element: <HomePage/>,
-	  },
 	{
     path: "/signin",
     element: <Signin />,
@@ -41,10 +36,6 @@ const router = createBrowserRouter([
   {
     path: "/change-password",
     element: <ChangePassword />,
-  },
-  {
-    path: "/articles/:articleID",
-    element: <Modal />,
   },
   {
     path: "*",

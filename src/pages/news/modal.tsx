@@ -26,15 +26,9 @@ const Modal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => {
     setIsOpen(false);
-    navigate("/");
+    navigate("../");
   };
 
-  const openModal = () => {
-    setIsOpen(true);
-  };
-  useEffect(() => {
-    openModal();
-  }, []);
 
   const fetchArticle = async (articleID: string | undefined) => {
     try {
@@ -64,7 +58,7 @@ const Modal = () => {
 
   return (
     <>
-      <Transition show={isOpen} as={Fragment}>
+      <Transition appear show={true} as={Fragment}>
         <Dialog
           as="div"
           className="fixed inset-0 z-10 overflow-y-auto  "
